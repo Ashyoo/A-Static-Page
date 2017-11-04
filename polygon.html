@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-1.11.3.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./fonts/font_pwly8p8bnq0py14i/iconfont.css">
+
+	<style>
+		*{margin:0;padding:0;list-style:none;text-decoration:none;}
+	/*头部导航log  css样式*/
+		.warp{
+			width:1300px;
+			height:900px;
+			background:#393e42;
+			margin:0 auto;
+			position:relative;
+		}
+
+		.warp-header>img{
+			margin:30px 0px 0px 120px;
+		}
+		.warp-header>ul{
+			float:right;
+		}
+		.warp-header>ul>li{
+			padding-right:5px;
+			float:left;
+		}
+		.warp-header>ul>li>a{
+			padding:20px;
+			display:inline-block;
+			color: white;
+			font-size: 16px;
+			font-family:"微软雅黑";
+			background: #343536;
+			text-align:center;
+		}
+		.warp-header>ul>li>a>span{
+			width:100%;
+			margin-bottom:15px;
+			font-size:30px;
+		    display:inline-block;
+		}
+	/***********************第一个页面*********************************/
+
+
+
+	/*中间top 图片css样式*/
+		.main-top{
+			width:1200px;
+			height:500px;
+			margin-left:120px;
+			position:relative;
+		}
+		.main-top>div{
+			float:left;
+		}
+		.hex-left{
+			width:200px;
+			height:300px;
+			transform:rotate(120deg);
+			overflow:hidden;
+			margin:7px;
+		}
+		.hex-right{
+			width:200px;
+			height:300px;
+			transform:rotate(-60deg);
+			overflow:hidden;
+
+		}
+		.hex-center{
+			width:200px;
+			height:300px;
+			transform:rotate(-60deg);
+			overflow:hidden;
+			background-repeat: no-repeat;
+			background-position:50%;
+			background-size:125%;
+
+		}
+	/*************************动画样式**************/
+		.fadeIn{
+			height:100%;
+			width:100%;
+			display:none;
+			transition:all 200ms cubic-bezier(0.31, 0.18, 0.23, 0.74);
+
+		}
+		.fadeIn:hover{
+			box-shadow:inset 0px 0px 100px 85px rgba(0,0,0,0.6);
+		}
+
+		.center-box{
+			width:35px;
+			height:35px;
+			display:inline-block;
+			background:#b69e40;
+			border-radius: 3px;
+			margin:135px 85px;
+		}
+		.center-box>span{
+			color:#000;
+			font-size:15px;
+			font-family:"微软雅黑";
+			margin-left:11px;
+			line-height:38px;
+			font-weight: 700;
+		}
+	/*隐藏的图片css样式*/
+		.more-p{
+			width:1200px;
+			padding-left: 120px;
+			position:relative;
+		}
+		#button-more{
+			border:none;
+			outline:none;
+			margin:0px 436px;
+			font-size:20px;
+			font-family:"微软雅黑";
+			color:#fff;
+			width:200px;
+			height:50px;
+			text-align: center;
+			line-height:50px;
+			background:#b69e40;
+			cursor:pointer;
+		}
+		#yincang{
+			display:none;
+			width:100%;
+			height:350px;
+		}
+	/***********************第二个页面css样式***********************/
+		.two-main{
+			width:100%;
+			height:510px;
+		}
+		.two-main-top{
+			padding-top: 65px;
+			padding-left: 80px;
+		}
+
+		.two-main-bottom{
+			padding-top: 315px;
+			padding-left: 80px;
+		}
+		.two-main-content div{
+			float:left;
+		}
+		.text{
+			width:300px;
+			height:185px;
+			margin-top:65px;
+			margin-left:50px;
+			color:#AEB5BA;
+			font-size:14px;
+			font-family:"楷体";
+		}
+		.text h3{
+			color:#fff;
+			font-size:25px;
+			padding-bottom: 15px;
+		}
+		/*图片里面的小六边形*/
+		.p-smallhex{
+			width:45px;
+			height:40px;
+			background-image:url("./images/templatemo_teamhexa_hover.png");
+			background-repeat: no-repeat;
+			margin-top:130px;
+			margin-left:4px;
+
+		}
+		.p-smallhex span{
+			margin-left:10px;
+			line-height:40px;
+			font-size:25px;
+			color:#fff;
+		}
+		.phas{
+			display: inline-block;
+			width:200px;
+			color:#fff;
+			font-size:12px;
+			text-align: center;
+		}
+	/*********************第三个页面css样式*********************/
+		.three-main{
+			width:1200px;
+			height:530px;
+			margin-left: 100px;
+		}
+		.three-main-top ul li{
+			width:200px;
+			height:230px;
+			float:left;
+			margin:80px 10px 20px;
+			background-image: url("./images/templatemo_contactiframe.png");
+			background-size: 100%;
+			background-repeat:no-repeat;
+			position:relative;
+
+		}
+		.three-main-top ul li:hover{
+			background-color:#b69e40;
+
+		}
+		.three-main-top ul li:hover span{
+			color:#fff;
+
+		}
+		.three-main-top ul li span{
+			position:absolute;
+			top:85px;
+			left:75px;
+			font-size:50px;
+			color:#b69e40;
+		}
+		.three-main-top:after{
+			content:"";
+			display:block;
+		}
+		.three-main-bottom ul li{
+			width:200px;
+			height:300px;
+			float:left;
+			margin:0px 10px 20px;
+			text-align:center;
+			color:#fff;
+
+		}
+		.three-main-bottom p{
+			color:#aeb5ba;
+			font-size:13px;
+			margin-top: 25px;
+		}
+
+	/*******************第四个页面css样式*************************/
+		.four-main{
+			width:1200px;
+			height:560px;
+			margin-left:100px;
+
+		}
+		.four-main>div{
+			float:left;
+		}
+		.four-left{
+			width:320px;
+			height:465px;
+			background-image: url("./images/templatemo_contactiframe.png");
+			background-size: 100%;
+			background-repeat: no-repeat;
+			margin-top: 120px;
+		}
+		.four-center{
+			width:260px;
+			height:300px;
+			margin:100px 20px 50px 50px;
+			color:#fff;
+			font-size:13px;
+		}
+		.four-center>p{
+			margin-bottom:30px;
+			color:#AEB5BA;
+		}
+		.li-right{			/*右边的文字*/
+			float:left;
+			margin-bottom: 20px;
+			display:inline;
+			color:#E7E7E7;
+		}
+		.four-center>ul>li>span{
+			float:left;
+			color:#b69e40;
+			font-size:22px;
+			padding-right:37px;
+		}
+		.four-right{
+			width:400px;
+			height:300px;
+			margin-top:100px;
+		}
+		/*表单的css样式*/
+		.four-right>input{
+			float: left;
+			width: 100%;
+			height: 34px;
+			padding: 6px 12px;
+			background: #343536;
+			border: 1px solid #4b5257;
+			margin: 5px 0px 10px;
+			color: #cccccc;
+		}
+		.four-right>textarea{
+			float: left;
+			padding: 6px 12px;
+			background: #343536;
+			border: 1px solid #4b5257;
+			margin: 5px 0px 10px;
+			color: #cccccc;
+		}
+		/*button的css样式*/
+		.send{
+			width:426px;
+			height:50px;
+			color:#fff;
+			background:#b69e40;
+			border:none;
+			outline:none;
+			cursor:pointer;
+		}
+
+	/*******************页脚部分的css样式**************************/
+
+		.bottom{
+			width:100%;
+			height:90px;
+			background:#343536;
+			margin-top:190px;
+
+
+		}
+		.bottom-left{
+			width:600px;
+			margin-left:100px;
+			line-height:90px;
+			font-size:13px;
+			color:#fff;
+			float:left;
+		}
+		.bottom-left>a{
+			font-family:"微软雅黑";
+			color:#b69e40;
+			font-size:11px;
+		}
+		.bottom-right>a>div{
+			float:right;
+			margin:18px 3px 0px;
+			line-height:72px;
+		}
+		.bottom-right>ul>li{
+			float:left;
+		}
+		.bottom-right>a>div>.iconfont{
+			color:#fff;
+			font-size: 16px;
+			position:absolute;
+		}
+		.bottom-right>a>div:hover{
+			background:url("./images/templatemo_teamhexa_hover.png");
+			background-repeat:no-repeat;
+		}
+
+/*******************点击图片出现大图*************************/
+	.bigbox{
+			width:100%;
+			height:100%;
+			background-color:rgba(211, 211, 211, 0.5);
+			position:fixed;
+			top:0px;
+			left:0px;
+			cursor: pointer;
+			display:none;
+		}
+		.tup>img{
+			width:500px;
+			height:500px;
+			position:absolute;
+			top:10%;
+			left:30%;
+			/*background-size: 50%;*/
+			background-repeat:no-repeat;
+			box-shadow: 0 0 40px #000;
+    		border-radius: 10px;
+		}
+		.close{
+			position:absolute;
+			right:30px;
+			top:30px;
+			transition:all 500ms;
+			opacity:0.5;
+		}
+		.btnLeft{
+			position:absolute;
+			left:5%;
+			top:50%;
+			transition:all 500ms;
+			opacity:0.5;
+		}
+		.btnRight{
+			position:absolute;
+			left:90%;
+			top:50%;
+			transition:all 500ms;
+			opacity:0.5;
+		}
+		.trans:hover{
+			opacity:1.0;
+			transform:scale(1.5);
+		}
+	</style>
+</head>
+<body>
+
+	<div class="warp">
+		<!-- 头部log 导航 -->
+			<div class="warp-header">
+				<img src="./images/templatemo_logo.jpg" alt="">
+				<ul>
+					<li><a href="#"><span class="iconfont icon-xiangji"></span>GALLERY</a></li>
+					<li><a href="#"><span class="iconfont icon-our"></span>OURTEAM</a></li>
+					<li><a href="#"><span class="iconfont icon-services"></span>SERVICES</a></li>
+					<li style="margin-right:120px;"><a href="#"><span class="iconfont icon-mail"></span>CONTACT</a></li>
+			</div>
+
+		<!--************** 第一个页面  **************************-->
+
+			<!-- 中间图片部分 -->
+
+			<div class="main-top" style="display:block">
+
+				<div class="hex-left">
+					<div class="hex-right">
+						<div class="hex-center" style="background-image:url(./images/gallery/1.jpg)">
+							<div class="fadeIn">
+								<a class="center-box" href="#" data-id="1">
+
+									<span class="iconfont icon-arrows_stretch_diagonal">
+
+									</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="hex-left">
+					<div class="hex-right">
+						<div class="hex-center" style="background-image:url(./images/gallery/2.jpg)">
+							<div class="fadeIn" style="display:none">
+								<a class="center-box" href="#"  data-id="2">
+									<span class="iconfont icon-arrows_stretch_diagonal"></span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="hex-left" style="position:absolute;top:0px;left:428px;">
+					<div class="hex-right">
+						<div class="hex-center" style="background-image:url(./images/gallery/3.jpg)">
+							<div class="fadeIn" style="display:none">
+								<a class="center-box"  href="#" data-id="3">
+									<span class="iconfont icon-arrows_stretch_diagonal"></span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="hex-left" style="position:absolute;top:0px;left:641px;">
+					<div class="hex-right">
+						<div class="hex-center" style="background-image:url(./images/gallery/4.jpg)">
+							<div class="fadeIn" style="display:none">
+								<a class="center-box"  href="#" data-id="4">
+									<span class="iconfont icon-arrows_stretch_diagonal"></span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="hex-left" style="position:absolute;top:0px;left:855px;">
+					<div class="hex-right">
+						<div class="hex-center" style="background-image:url(./images/gallery/5.jpg)">
+							<div class="fadeIn" style="display:none">
+								<a class="center-box"  href="#" data-id="5">
+									<span class="iconfont icon-arrows_stretch_diagonal"></span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="hex-left" style="position:absolute;top:182px;left:107px;">
+					<div class="hex-right">
+						<div class="hex-center" style="background-image:url(./images/gallery/6.jpg)">
+							<div class="fadeIn" style="display:none">
+								<a class="center-box" href="#" data-id="6">
+									<span class="iconfont icon-arrows_stretch_diagonal"></span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="hex-left" style="position:absolute;top:184px;left:321px;">
+					<div class="hex-right">
+						<div class="hex-center" style="background-image:url(./images/gallery/7.jpg)">
+							<div class="fadeIn" style="display:none">
+								<a class="center-box"  href="#" data-id="6" data-id="7">
+									<span class="iconfont icon-arrows_stretch_diagonal"></span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="hex-left" style="position:absolute;top:185px;left:535px;">
+					<div class="hex-right">
+						<div class="hex-center" style="background-image:url(./images/gallery/8.jpg)">
+							<div class="fadeIn" style="display:none">
+								<a class="center-box"  href="#" data-id="8">
+									<span class="iconfont icon-arrows_stretch_diagonal"></span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="hex-left" style="position:absolute;top:184px;left:750px;">
+					<div class="hex-right">
+						<div class="hex-center" style="background-image:url(./images/gallery/9.jpg)">
+							<div class="fadeIn" style="display:none">
+								<a class="center-box"  href="#" data-id="9">
+									<span class="iconfont icon-arrows_stretch_diagonal"></span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+			<!-- 隐藏的 更多 -->
+			<div class="more-p" style="display:block">
+
+				<div id="yincang">
+
+					<div class="hex-left" style="position:absolute;top:-134px;left:122px;">
+						<div class="hex-right">
+							<div class="hex-center" style="background-image:url(./images/gallery/10.jpg)">
+								<div class="fadeIn" style="display:none">
+									<a class="center-box" data-id="10">
+										<span class="iconfont icon-arrows_stretch_diagonal"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="hex-left" style="position:absolute;top:-134px;left:333px;">
+						<div class="hex-right">
+							<div class="hex-center" style="background-image:url(./images/gallery/11.jpg)">
+								<div class="fadeIn" style="display:none">
+									<a class="center-box"  href="#" data-id="11">
+										<span class="iconfont icon-arrows_stretch_diagonal"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="hex-left" style="position:absolute;top:-134px;left:549px;">
+						<div class="hex-right">
+							<div class="hex-center" style="background-image:url(./images/gallery/12.jpg)">
+								<div class="fadeIn" style="display:none">
+									<a class="center-box"  href="#" data-id="12">
+										<span class="iconfont icon-arrows_stretch_diagonal"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="hex-left" style="position:absolute;top:-134px;left:762px;">
+						<div class="hex-right">
+							<div class="hex-center" style="background-image:url(./images/gallery/13.jpg)">
+								<div class="fadeIn" style="display:none">
+									<a class="center-box"  href="#" data-id="13">
+										<span class="iconfont icon-arrows_stretch_diagonal"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="hex-left" style="position:absolute;top:-134px;left:977px;">
+						<div class="hex-right">
+							<div class="hex-center" style="background-image:url(./images/gallery/14.jpg)">
+								<div class="fadeIn" style="display:none">
+									<a class="center-box"  href="#" data-id="14">
+										<span class="iconfont icon-arrows_stretch_diagonal"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="hex-left" style="position:absolute;top:50px;left:227px;">
+						<div class="hex-right">
+							<div class="hex-center" style="background-image:url(./images/gallery/15.jpg)">
+								<div class="fadeIn" style="display:none">
+									<a class="center-box"  href="#" data-id="15">
+										<span class="iconfont icon-arrows_stretch_diagonal"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="hex-left" style="position:absolute;top:50px;left:440px;">
+						<div class="hex-right">
+							<div class="hex-center" style="background-image:url(./images/gallery/16.jpg)">
+								<div class="fadeIn" style="display:none">
+									<a class="center-box"  href="#" data-id="16">
+										<span class="iconfont icon-arrows_stretch_diagonal"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="hex-left" style="position:absolute;top:50px;left:655px;">
+						<div class="hex-right">
+							<div class="hex-center" style="background-image:url(./images/gallery/17.jpg)">
+								<div class="fadeIn" style="display:none">
+									<a class="center-box"  href="#" data-id="17">
+										<span class="iconfont icon-arrows_stretch_diagonal"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="hex-left" style="position:absolute;top:50px;left:870px;">
+						<div class="hex-right">
+							<div class="hex-center" style="background-image:url(./images/gallery/18.jpg)">
+								<div class="fadeIn" style="display:none">
+									<a class="center-box"  href="#" data-id="18">
+										<span class="iconfont icon-arrows_stretch_diagonal"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<button id="button-more">LOAD MORE</button>
+			</div>
+
+		<!--*****************第二个页面************************** -->
+			<div class="two-main" style="display:none">
+				<!-- top -->
+				<div class="two-main-top">
+					<div class="two-main-content">
+						<!-- top左边的六边形 -->
+						<div class="hex-left">
+							<div class="hex-right">
+								<div class="hex-center" style="background-image:url(./images/team/1.jpg)">
+									<div class="fadeIn" style="display:none">
+										<a href="#">
+											<div class="p-smallhex">
+												<span class="iconfont icon-facebook"></span>
+											</div>
+										</a>
+										<a href="#">
+											<div class="p-smallhex">
+												<span class="iconfont icon-twitter"></span>
+											</div>
+										</a>
+										<a href="#">
+											<div class="p-smallhex">
+												<span class="iconfont icon-linkedin"></span>
+											</div>
+										</a>
+										<a href="#">
+											<div class="p-smallhex">
+												<span class="iconfont icon-wifi"></span>
+											</div>
+										</a>
+										<span class="phas">Phasellus interdum</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- top的文字 -->
+						<div class="text">
+							<h3>Free Template</h3>
+							<p>Polygon is <a href="#" style="color:#b69e40">free HTML5 template</a> by templatemo that can be used for any purpose. Cras lobortis, ligula ut hendrerit condimentum, magna lorem lobortis nisi, ac suscipit nunc est vitae turpis. Nullam vulputate nec nulla sed fringilla. Aliquam tempus consectetur diam, in suscipit turpis pulvinar at.</p>
+						</div>
+						<!-- top右边的六边形 -->
+						<div class="hex-left">
+							<div class="hex-right">
+								<div class="hex-center" style="background-image:url(./images/team/2.jpg)">
+									<div class="fadeIn" style="display:none">
+										<a href="#">
+											<div class="p-smallhex">
+												<span class="iconfont icon-facebook"></span>
+											</div>
+										</a>
+										<a href="#">
+											<div class="p-smallhex">
+												<span class="iconfont icon-twitter"></span>
+											</div>
+										</a>
+										<a href="#">
+											<div class="p-smallhex">
+												<span class="iconfont icon-linkedin"></span>
+											</div>
+										</a>
+										<a href="#">
+											<div class="p-smallhex">
+												<span class="iconfont icon-wifi"></span>
+											</div>
+										</a>
+										<span class="phas">Cras interdum accumsan diam</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- top右边的文字 -->
+						<div class="text">
+							<h3>Responsive Design</h3>
+							<p>This layout is a <a>mobile template</a> which is compatible with tablets and mobile phones. Mauris eget neque at sapien faucibus egestas vel vitae mi. Maecenas commodo augue risus, sed placerat neque feugiat vel. Fusce augue urna, faucibus et nulla bibendum, luctus porttitor nulla.</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- bottom -->
+				<div class="two-main-bottom">
+					<div class="two-main-content">
+						<!-- bottom左边的六边形 -->
+						<div class="hex-left">
+							<div class="hex-right">
+								<div class="hex-center" style="background-image:url(./images/team/3.jpg)">
+									<div class="fadeIn" style="display:none">
+										<a href="#">
+											<div class="p-smallhex">
+												<span class="iconfont icon-facebook"></span>
+											</div>
+										</a>
+										<a href="#">
+											<div class="p-smallhex">
+												<span class="iconfont icon-twitter"></span>
+											</div>
+										</a>
+										<a href="#">
+											<div class="p-smallhex">
+												<span class="iconfont icon-linkedin"></span>
+											</div>
+										</a>
+										<a href="#">
+											<div class="p-smallhex">
+												<span class="iconfont icon-wifi"></span>
+											</div>
+										</a>
+										<span class="phas">Morbi pulvinar</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- bottom的文字 -->
+						<div class="text">
+							<h3>Mobile Ready</h3>
+							<p>Sed laoreet, enim quis euismod egestas, risus tortor tincidunt lacus, in iaculis mauris lectus at augue. Donec luctus nibh nec ullamcorper feugiat. Phasellus felis urna, lobortis vitae lacus sit amet, tristique consectetur nibh.</p>
+						</div>
+						<!-- bottom右边的六边形 -->
+						<div class="hex-left">
+							<div class="hex-right">
+								<div class="hex-center" style="background-image:url(./images/team/4.jpg)">
+									<div class="fadeIn" style="display:none">
+										<a href="#">
+											<div class="p-smallhex">
+												<span class="iconfont icon-facebook"></span>
+											</div>
+										</a>
+										<a href="#">
+											<div class="p-smallhex">
+												<span class="iconfont icon-twitter"></span>
+											</div>
+										</a>
+										<a href="#">
+											<div class="p-smallhex">
+												<span class="iconfont icon-linkedin"></span>
+											</div>
+										</a>
+										<a href="#">
+											<div class="p-smallhex">
+												<span class="iconfont icon-wifi"></span>
+											</div>
+										</a>
+										<span class="phas">Sed nonummy</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--bottom右边的文字 -->
+						<div class="text">
+							<h3>Lorem ipsum dolor</h3>
+							<p>Phasellus sodales magna orci, id scelerisque lectus faucibus a. Vivamus varius tincidunt sem. Etiam ultricies orci sit amet sem egestas varius vitae at lacus. Nunc blandit elit in mauris semper, id iaculis felis condimentum.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		<!-- **************第三个页面************************** -->
+			<div class="three-main" style="display:none">
+				<div class="three-main-top">
+					<ul>
+						<li>
+							<span class="iconfont icon-naoling">
+						</li>
+						<li>
+							<span class="iconfont icon-iconfontboxno">
+						</li>
+						<li>
+							<span class="iconfont icon-icon1">
+						</li>
+						<li>
+							<span class="iconfont icon-jiangbei">
+						</li>
+						<li>
+							<span class="iconfont icon-tuding">
+						</li>
+					</ul>
+				</div>
+
+				<div class="three-main-bottom">
+					<ul>
+						<li>
+							<h4>Etiam vulputate</h4>
+							<p>Vestibulum diam lorem, aliquet et sagittis ac, facilisis nec massa. Suspendisse sagittis leo diam, sed dapibus eros vehicula eu. Aenean nulla magna, gravida at dui in, fringilla vestibulum massa.</p>
+						</li>
+						<li>
+							<h4>Aliquam faucibus</h4>
+							<p>Vivamus a purus vel ante fermentum bibendum. Sed laoreet, enim quis euismod egestas, risus tortor tincidunt lacus, in iaculis mauris lectus at augue. Donec luctus nibh nec ullamcorper feugiat.</p>
+						</li>
+						<li>
+							<h4>Donec sagittis</h4>
+							<p>Phasellus sodales magna orci, id scelerisque lectus faucibus a. Vivamus varius tincidunt sem. Etiam ultricies orci sit amet sem egestas varius vitae at lacus. Nunc blandit elit in mauris semper, id iaculis felis condimentum.</p>
+						</li>
+						<li>
+							<h4>Integer tempus</h4>
+							<p>Maecenas porttitor erat et enim dapibus, sit amet accumsan velit tincidunt. Etiam sapien urna, suscipit ut purus ac, convallis pulvinar tellus. In eu neque purus. Donec cursus dictum pulvinar.</p>
+						</li>
+						<li>
+							<h4>Aliquam pellentesque</h4>
+							<p>Nam auctor elementum dolor. Donec euismod, justo sed convallis blandit, ipsum erat mattis lectus, vel pharetra neque enim tristique risus. Ut consequat nisi vel justo. Curabitur in orci vel enim congue cursus.</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		<!-- **************第四个页面**************************** -->
+			<div class="four-main" style="display:none">
+				<div class="four-left"></div>
+				<div class="four-center">
+					<h3>Contact Information</h3>
+					<p>Integer eu neque sed mi fringilla pellentesque a eget leo. Duis ornare diam lorem, sit amet tempor mauris fringilla in. Etiam semper tempus augue, at vehicula metus. Nam vestibulum tortor nec congue ornare.</p>
+					<ul>
+						<li>
+							<span class="iconfont icon-icon"></span>
+						</li>
+						<li class="li-right">Nulla ut tellus, sit amet urna,<br>scelerisque pretium 10560</li>
+						<li>
+							<span class="iconfont icon-dianhua"></span>
+						</li>
+						<li class="li-right" style="margin-right:55px;">010-040-0260</li>
+						<li>
+							<span class="iconfont icon-mail"></span>
+						</li>
+						<li class="li-right">info@company.com</li>
+					</ul>
+				</div>
+				<div class="four-right">
+					<input type="text" placeholder="Your Name">
+					<input type="text" placeholder="Your Email">
+					<input type="text" placeholder="Your Subject">
+					<textarea name="" id="" cols="55" rows="10" placeholder="Message"></textarea>
+					<!-- <input type="text" name="text" placeholder="Your Message" style="height:120px;"> -->
+					<button class="send">SEND MESSAGE</button>
+				</div>
+			</div>
+		<!-- ************页脚部分******************************** -->
+
+		<!-- 最下面的字 -->
+			<div class="bottom">
+				<div class="bottom-left">
+					Copyright © 2084 Company Name |
+					<a href="">HTML5 Template</a>
+					Collect from <a href="">网站模板</a>
+					 |
+					 <a href="">Photos</a>
+					 by Unsplash
+				</div>
+
+				<div class="bottom-right" style="margin-right:100px;position:relative">
+					<a href="">
+						<div>
+							<img src="./images/templatemo_footerhexa.png" alt="">
+							<span class="iconfont icon-wifi" style="top:4px;left:1167px;">
+
+							</span>
+						</div>
+					</a>
+
+					<a href="">
+						<div>
+							<img src="./images/templatemo_footerhexa.png" alt="">
+							<span class="iconfont icon-linkedin" style="top:4px;left:1115px;">
+
+							</span>
+						</div>
+					</a>
+
+					<a href="">
+						<div>
+							<img src="./images/templatemo_footerhexa.png" alt="">
+							<span class="iconfont icon-twitter" style="top:4px;left:1063px;">
+
+							</span>
+						</div>
+					</a>
+
+					<a href="">
+						<div>
+							<img src="./images/templatemo_footerhexa.png" alt="">
+							<span class="iconfont icon-facebook" style="top:4px;left:1010px;">
+
+							</span>
+						</div>
+					</a>
+
+				</div>
+			</div>
+
+		<!-- ***********点击图片出现大图************************* -->
+			<div class="bigbox">
+				<div class="close trans">
+					<img src="./images/close.png" alt="">
+				</div>
+
+				<div class="btnLeft trans">
+					<img src="./images/previous.png" alt="">
+				</div>
+				<div class="btnRight trans">
+					<img src="./images/next.png" alt="">
+				</div>
+
+				<div class="tup">
+					<img src="" alt="">
+
+				</div>
+
+			</div>
+	</div>
+</body>
+</html>
+<script>
+	$('.warp>.warp-header>ul>li>a').eq(0).css('color','#b69e40');
+
+	// 点击右上角导航
+	var navLi = document.querySelectorAll('.warp-header>ul>li');
+
+
+		navLi[0].onclick=function(){
+			var dsp = $('#yincang').css('display');
+			$('.warp>.warp-header>ul>li>a').eq(0).css('color','#b69e40');
+			$('.warp>.warp-header>ul>li>a').eq(1).css('color','#fff');
+			$('.warp>.warp-header>ul>li>a').eq(2).css('color','#fff');
+			$('.warp>.warp-header>ul>li>a').eq(3).css('color','#fff');
+			$('.main-top,.more-p').css('display','block');
+			$('.two-main,.three-main,.four-main').css('display','none');
+			if(dsp=='block'){
+				$('.warp').css('height','1200px');
+
+			}else{
+				$('.warp').css('height','900px');
+			}
+		}
+
+		navLi[1].onclick=function(){
+
+			$('.warp>.warp-header>ul>li>a').eq(1).css('color','#b69e40');
+			$('.warp>.warp-header>ul>li>a').eq(0).css('color','#fff');
+			$('.warp>.warp-header>ul>li>a').eq(2).css('color','#fff');
+			$('.warp>.warp-header>ul>li>a').eq(3).css('color','#fff');
+			$('.main-top,.more-p,.three-main,.four-main').css('display','none');
+			$('.two-main').css('display','block');
+			$('.warp').css('height','900px');
+		}
+		navLi[2].onclick=function(){
+			$('.three-main').css('display','block');
+			$('.main-top,.more-p,.two-main,.four-main').css('display','none');
+			$('.warp').css('height','900px');
+			$('.warp>.warp-header>ul>li>a').eq(2).css('color','#b69e40');
+			$('.warp>.warp-header>ul>li>a').eq(1).css('color','#fff');
+			$('.warp>.warp-header>ul>li>a').eq(0).css('color','#fff');
+			$('.warp>.warp-header>ul>li>a').eq(3).css('color','#fff');
+		}
+		navLi[3].onclick=function(){
+			$('.four-main').css('display','block');
+			$('.main-top,.more-p,.two-main,.three-main').css('display','none');
+			$('.warp').css('height','900px');
+			$('.warp>.warp-header>ul>li>a').eq(3).css('color','#b69e40');
+			$('.warp>.warp-header>ul>li>a').eq(0).css('color','#fff');
+			$('.warp>.warp-header>ul>li>a').eq(1).css('color','#fff');
+			$('.warp>.warp-header>ul>li>a').eq(2).css('color','#fff');
+
+		}
+
+	// 点击图片出现大图
+
+	for(var i=0;i<18;i++){
+		$('.fadeIn>a').eq(i).click(function(){
+			$('.bigbox').fadeIn();
+			var index = $(this).attr('data-id');
+			$('.bigbox>.tup>img').attr('src','./images/gallery/'+index+'.jpg');
+
+			$('.btnLeft').click(function(){
+				index--;
+				$('.bigbox>.tup>img').attr('src','./images/gallery/'+(index)+'.jpg');
+				if(index<1){
+					index=18;
+				}
+				$('.bigbox>.tup>img').attr('src','./images/gallery/'+(index)+'.jpg');
+			})
+			$('.btnRight').click(function(){
+				index++;
+				$('.bigbox>.tup>img').attr('src','./images/gallery/'+(index)+'.jpg');
+				if(index>18){
+					index=1;
+				}
+				$('.bigbox>.tup>img').attr('src','./images/gallery/'+(index)+'.jpg');
+			})
+		})
+	}
+
+
+
+	$('.close').click(function(){
+		$('.bigbox').fadeOut();
+	})
+
+	// 点击LOAD MORE事件
+	$('button').eq(0).click(function(){
+		var dsp = $('#yincang').css('display');
+		if(dsp=='none'){
+			$('#yincang').show();
+			$('#button-more').html('LOAD LESS');
+			$('.warp').css('height','1200px');
+		}else{
+			$('#yincang').hide();
+			$('#button-more').html('LOAD MORE');
+			$('.warp').css('height','900px');
+		}
+	});
+
+
+// 鼠标经过hex事件
+	$('.hex-center').hover(function(){
+		$(this).find('.fadeIn').fadeIn(100);
+	},function(){
+		$(this).find('.fadeIn').fadeOut(100);
+	})
+</script>
